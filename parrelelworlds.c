@@ -74,16 +74,19 @@ int parrelworldsteams(int *inputlista, int *inputlistb, int sizea, int sizeb){
 		return 0;
 	}
 	int i=0;
-	double convelutedlist[sizea];
-	double sum =0;
+	int convelutedlist[sizea];
+	int sum =0;
 	for(i=0; i<sizea; i++){
 		sum += (listb[i]);
 	}
-	double meansum = 0;
+	printf("sum: \t %d\n", sum);
+	int meansum = 0;
 	for(i=0; i<sizea; i++){
 		convelutedlist[i] =  sum*(lista[i]);
 		convelutedlist[i] -= (lista[i]);
+		printf("ab: \t %d\n", convelutedlist[i]);
 		meansum += convelutedlist[i];
+		printf("mesum: \t %d\n", meansum);
 	}
 	unsigned long long factorial = 1;  
 	for (i = 1; i <= sizea; ++i) {
@@ -93,7 +96,7 @@ int parrelworldsteams(int *inputlista, int *inputlistb, int sizea, int sizeb){
 	int b = (int)(meansum/(sizea));
 	int c = (int)(meansum/(factorial ));   //+(c*c)
 	//return ((c*c)*(a*a)*(b*b))/(meansum*meansum);
-	return a+b+c-(sizea*(102/5)) -2;
+	return meansum/sum;
 
 }
 int main(){
