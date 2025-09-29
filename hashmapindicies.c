@@ -30,7 +30,9 @@ int* findindiciesontarget(int target, int vector[], int max, int len){
 	}
 	for(i=0; i<=2*len; i++){
 		if(hashtable[full[i]]>1){
-			int  output[3] = {untouchedmap[full[i]], indicies[full[i]]};
+			int* output = malloc(2 * sizeof(int));
+			output[0] = untouchedmap[full[i]];
+			output[1] = indicies[full[i]];
 			return output;
 		}
 	}
