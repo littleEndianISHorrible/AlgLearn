@@ -19,13 +19,13 @@ bool happy_number(unsigned int n){
 		nextn=0;
 		while(n>0){
 		buffern = vector[4-bitclock] = (n) % 10;//not work(n >> (bits-(8*(bitclock)))) & 0xF;
+		printf("%d,", buffern);
 		buffern*=buffern;
 		nextn+=buffern;      
-		//printf("%d,", buffern);
 		n/=10;
 		bitclock++;
 		}
-		//printf("\n");
+		printf("\n");
 		if(n==nextn){
 			free(vector);
 			return false;
